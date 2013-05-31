@@ -1,5 +1,12 @@
-Proyecto hecho en LungoJS para la 2da convocatoria de AppsCo B/quilla
+<h1><a href="http://rumbon.zz.mu">RumbON</a></h1>
 
-- Consume datos de una API Rest hecha en Laravel (https://github.com/animista01/RumbON-Web)
+<h4>Proyecto hecho en LungoJS para la 2da convocatoria de AppsCo B/quilla</h4>
+
+<h2>Permite</h2>
+<ul>
+	<li>(Get) Consumir datos de una API Rest hecha en Laravel (<a href="https://github.com/animista01/RumbON-Web">RumbON-Web</a>)</li>
+	<li>(Post) Enviar datos al API Rest (Registrarse, al escoger en que discoteca quiere ir)</li>
+</ul>	
+
 
 "Este es el repositorio de RumbON, proyecto para AppsCO"
