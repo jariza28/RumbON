@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>RumbON</title>
+    <title>Rumba</title>
     <meta name="description" content="">
     <meta name="author" content="">
     <meta name="HandheldFriendly" content="True">
@@ -52,27 +52,47 @@
 </head>
 
 <body class="app">
-    <section id="splash" data-transition="slide">
+    <!--*****************************Bienvenida********************************************-->
+    <section id="first" data-transition="slide">
         <article class="indented splash">
             <h1>RumbON</h1>
             <form>
-                <input type="text" placeholder="Usuario" />
-                <input type="password" placeholder="Contraseña" />
-                <a href="#main" data-router="section" class="button blue big" data-icon="user" data-label="login"></a>
+                <input id="username" type="text" placeholder="Email" required />
+                <input id="password" type="password" placeholder="Contraseña" required />
+                <a href="#" id="aLogin" class="button blue big" data-icon="user" data-label="Entrar"></a>
+            </form>
+            <a href="#registro" id="aRegistro" class="button blue" data-router="section" data-icon="plus" data-label="Regístrate"></a>
+        </article>
+    </section>
+
+    <section id="registro" data-transition="slide">
+        <header data-back="left" data-title="Unete :)"></header>
+        <article class="indented splash">
+            <form>
+                <fieldset data-icon="user">
+                    <input type="text" id="name" placeholder="Nombre Completo" required />
+                </fieldset>
+                <fieldset data-icon="mail">
+                    <input type="text" id="email" placeholder="E-mail" required />
+                </fieldset>
+                <fieldset data-icon="phone">
+                    <input type="tel" id="telephone" placeholder="Telefono" required />
+                </fieldset>
+                <fieldset data-icon="lock">
+                    <input type="password" id="pass" placeholder="Contraseña" required />
+                </fieldset>
+                <a href="#" id="aEnviarRegistro" class="button blue" data-icon="plus" data-label="Crear"></a>
             </form>
         </article>
     </section>
-    <section id="main" data-transition="slide">
-        <header data-title="Home" class="extended">
+    <!--**********************************MENU***************************************-->    
+    <section id="main" data-transition="slide" >
+        <header data-title="Home" class="extended"  >
             <nav class="left box">
-                <a href="#back" data-router="section" data-label="logout"></a>
+                <a href="#back" data-router="section" data-label="Logout"></a>
             </nav>
-
             <nav class="right">
                 <a href="#second" data-router="section" data-icon="chat"></a>
-            </nav>
-            <nav class="right">
-                <a href="" data-router="" data-icon="inbox"></a>
             </nav>
         </header>
         <article id="home" class="list indented scroll">
@@ -80,58 +100,39 @@
                 <input type="search" placeholder="Search...">
             </fieldset>
             <ul>
-                <li class="thumb selectable arrow" data-image="http://www.m-rumbasana.zz.mu/touch-icons/1366403636_taxi.png">
-                    <strong>Buscar Rumba</strong>
-                    <small>Encuentra la fiesta</small>
+                <li class="thumb selectable arrow" data-image="img/trago.png"  >
+                    <strong><a href="#buscar"  data-router="section" data-label="Rumba y Restaurantes" ></a></strong>
+                    <small>Encuentra la fiesta y donde comer</small>
                 </li>
-                <li id="taxi" class="thumb selectable arrow" data-image="http://www.m-rumbasana.zz.mu/touch-icons/1366403636_taxi.png">
-                    <strong>Taxi de confianza</strong>
-                    <small>Encuentra Taxi</small>
+                 <li id="taxi" class="thumb selectable arrow" data-image="img/mevoy.png">
+                    <strong>Me voy</strong>
+                    <small>En que te vas?</small>
                 </li>
-                <li class="thumb selectable arrow" data-image="http://www.m-rumbasana.zz.mu/touch-icons/search_zoom.png">
-                    <strong>Ayuda</strong>
-                    <small>Ayuda</small>
-                </li>
-                <li class="thumb selectable arrow" id="bar" data-image="http://www.m-rumbasana.zz.mu/touch-icons/bar.png">
-                    <strong>Discoteca</strong>
-                    <small>Bar</small>
-                </li>
-                <li class="thumb selectable arrow" id="panic" data-image="http://www.m-rumbasana.zz.mu/touch-icons/Panic.PNG">
+                
+                
+                <li class="thumb selectable arrow" id="panic" data-image="img/emergencia.png">
                     <strong>Boton de panico</strong>
                     <small>En caso de cualquier succeso</small>
                 </li>
-
             </ul>
-                
         </article>
+
         <footer>
             <nav>
                 <a href="#home" data-router="article" class="current" data-icon="home" data-title="Home"></a>
-                
                 <a href="#art-2" data-router="article" data-icon="search" data-title="Buscar"></a>
-
-                <a href="#art-3" data-router="article" data-icon="info" data-title="Recomendaciones"></a>
-
+                <a id="reco" href="#art-3" data-router="article" data-icon="info" data-title="Recomendaciones"></a>
                 <a href="#art-4" data-router="article" data-icon="settings" data-title="Configuracion"></a>
             </nav>
         </footer>
         
-        <article id="art-1" class="list indented scroll">
-            <ul>
-                <li>
-                    <div class="right bubble red">333</div>
-                    <strong>Lista</strong>
-                    <small>Descripcion....</small>
-                </li>
-                <li class="thumb selectable" data-image="https://github.com/voodootikigod/logo.js/diff_blob/4576aabdc9a12acaccee307fe60f7ae7a125dbdb/js.jpg?raw=true">
-                    <strong>Icono</strong>
-                    <small>Test</small>
-                </li>
-            </ul>
-        </article>
-
-        <article id="art-2">
-            
+        <article id="art-2" style=" padding:10px;">
+            <center>
+            	<form>
+                    <input type="text" placeholder="Buscar" />
+                 </form>
+                 <a href="#resultados"  data-router="section" class="button blue big">Buscar</a>
+            </center>       
         </article>
 
         <article id="art-3" class="active indented list scroll">
@@ -152,17 +153,291 @@
         </article>
 
         <article id="art-4" class="list indented scroll">
-            <ul>
-                <li class="selectable" id="configPanic">
-                    <strong>Boton de Panico</strong>
-                </li>
-            </ul>
-        </article>     
-        
+                <ul>
+                    <li class="selectable" id="configPanic">
+                        <a href="#ConfigSect"  data-router="section">Boton de Panico</a>
+                    </li>
+                </ul>
+        </article>
     </section>
+ 
+    <!--************************Buscar************************************************-->    
+    <section id="buscar" data-transition="slide" class="extended">
+        <header data-back="home" data-title="Buscar"></header>
+        <article class="list indented scroll">
+            <center>
+                <fieldset data-icon="search">
+                    <input type="search" placeholder="Search...">
+                     &nbsp;<a href="#resultados"  data-router="section" class="button small">Buscar</a>
+                </fieldset>     
+            </center>
+            <div>
+                <ul>
+                    <li class="thumb selectable">
+                        <strong><a id="aRest" href="#rest" data-router="section" data-label="Restaurantes" data-icon="pushpin"></a></strong>
+                        <small>Buscar Restaurante</small>
+                    </li>
+                    <li class="thumb selectable">
+                        <strong><a href="#generos" data-router="section" data-label="Generos" data-icon="music"></a></strong>
+                        <small>Busca por generos musicales</small>
+                    </li>
+                    <li class="thumb selectable">
+                        <strong><a href="#amigos" data-router="section" data-label="Amigos" data-icon="users"></a></strong>
+                        <small>Visita los lugares de amigos</small>
+                    </li>
+                    <li class="thumb selectable">
+                        <strong><a href="#recomendados" data-router="section" data-label="Recomendados" data-icon="thumbs-up"></a></strong>
+                        <small>Por las redes sociales</small>
+                    </li>
+                    <li class="thumb selectable">
+                        <strong><a href="#Precios" data-router="section" data-label="Precios" data-icon="bars"></a></strong>
+                        <small>Buscar por precios</small>
+                    </li>
+                </ul>
+            </div>
+        </article>
+    </section>
+    <!--*************************************************************************-->
+    <section id="resultados" data-transition="cover">
+        <header data-back="home" data-title="Buscar Rumba"></header>
+        <article style="padding:5px">
+            <div  class="list indented scroll">
+                <ul>
+                    <li class="thumb selectable" data-image="img/agua.png">
+                        <strong><a href="#agua" data-router="section" data-label="Agua Helada" ></a></strong>
+                        <small>Agua Helada</small>
+                    </li>
+                    <li class="thumb selectable" data-image="img/tru.png">
+                        <strong><a href="#Trucupey" data-router="section" data-label="Trucupey" ></a></strong>
+                        <small>Trucupey</small>
+                    </li>
+                    <li class="thumb selectable" data-image="img/troja.png">
+                        <strong><a href="#troja" data-router="section" data-label="La troja" ></a></strong>
+                        <small>La troja</small>
+                    </li>
+                </ul>
+            </div>
+        </article>
+    </section>
+    <!--**********************Resultados_Discostecas TRucupey**********************************************-->
+    <section id="Trucupey" data-transition="slide" class="extended">
+        <header data-back="left" data-title="Trucupey"></header>
+        <article style="padding:5px" class="list indented scroll">
+            <div>
+                <ul>
+                    <li class="thumb selectable" >
+                        <strong><a href="#mapa" data-router="section" data-label="Como llegar" data-icon="map"></a></strong>
+                        <small>Quiero ir ya.!</small>
+                    </li>
+                    <li class="thumb selectable" >
+                        <strong><a href="#" data-router="section" data-label="Precios" data-icon="ticket"></a></strong>
+                        <small>$</small>
+                    </li>
+                    <li class="thumb selectable" id="bar" >
+                        <strong><a href="#id="bar"" data-router="section" data-label="Chat de la disco" data-icon="chat"></a></strong>
+                        <small>Divierte con todos</small>
+                    </li>
+                    <li class="thumb selectable" >
+                        <strong><a href="#reservar" data-router="section" data-label="Reservar" data-icon="cart"></a></strong>
+                        <small>Compra tu cover</small>
+                    </li>
+                </ul>
+            </div>
+            <fieldset>
+                <label style="font-size:16px">Fotos</label>
+            </fieldset>
+            <ul class=" four row scroll anchor">
+                <img src="http://lorempixel.com/256/128/food/">
+                <img src="http://lorempixel.com/256/128/sports/">
+                <img src="http://lorempixel.com/256/128/people/">
+                <img src="http://lorempixel.com/256/128/technics/">
+                <img src="http://lorempixel.com/256/128/animals/">
+                <img src="http://lorempixel.com/256/128/nightlife/">
+                <img src="http://lorempixel.com/256/128/nature/">
+                <img src="http://lorempixel.com/256/128/transport/">
+                <img src="http://lorempixel.com/256/128/city/">
+                <img src="http://lorempixel.com/256/128/fashion/">
+                <img src="http://lorempixel.com/256/128/abstract/">
+            </ul>
+        </article>
+    </section>
+    <!--*************************GENEROS************************************************-->
+    <section id="generos" data-transition="slide">
+        <header data-back="left" data-title="Encuentra tu estilo"></header>
+        <article>
+            <div class="list indented scroll">
+                <ul>
+                    <li class="thumb selectable">
+                        <strong><a href="#resulxgenero" id="tipoclub" name="Salsa" data-router="section" data-label="Salsa" data-icon="music"></a></strong>
+                        <small>Busca por Salsa</small>
+                    </li>
+                    <li class="thumb selectable">
+                        <strong><a href="#resulxgenero" id="tipoclub" name="Crossover" data-router="section" data-label="Crossover" data-icon="music"></a></strong>
+                        <small>Busca por Crossover</small>
+                    </li>
+                    <li class="thumb selectable">
+                        <strong><a href="#resulxgenero" id="tipoclub" name="Reggaeton" data-router="section" data-label="Reggaeton" data-icon="music"></a></strong>
+                        <small>Busca por Reggaeton</small>
+                    </li>
+                    <li class="thumb selectable">
+                        <strong><a href="#resulxgenero" id="tipoclub" name="Vallenato" data-router="section" data-label="Vallenato" data-icon="music"></a></strong>
+                        <small>Busca por Vallenato</small>
+                    </li>
+                    <li class="thumb selectable">
+                        <strong><a href="#resulxgenero" id="tipoclub" name="Karaoke" data-router="section" data-label="Karaoke" data-icon="music"></a></strong>
+                        <small>Busca por Karaoke</small>
+                    </li>
+                </ul>
+            </div>            
+        </article>
+    </section>
+    <!-- Resultado de la busqueda por tipo -->
+    <section id="resulxgenero" data-transition="slide">
+        <header data-back="left" data-title="Discotecas"></header>
+        <article id="listaresultipo" class="list indented scroll">
+        </article>
+        <footer>
+            <nav>
+                <a href="#home" data-router="article" class="current" data-icon="home" data-title="Home"></a>
+                <a href="#art-2" data-router="article" data-icon="search" data-title="Buscar"></a>
+                <a id="reco" href="#art-5" data-router="article" data-icon="info" data-title="Recomendaciones"></a>
+                <a href="#art-4" data-router="article" data-icon="settings" data-title="Configuracion"></a>
+            </nav>
+        </footer>
 
+        <article id="art-5" class="list indented scroll">
+        </article>
+    </section>
+    <!--***********************Recomendacion por Amigos**************************************************-->
+    <section id="amigos" data-transition="slide">
+        <header data-back="left" data-title="Tus Amigos Fueron a:"></header>
+        <article style="padding:5px"  class="list indented scroll">
+            <div>
+                <ul>
+                    <li class="thumb selectable" data-image="img/agua.png">
+                        <strong><a href="#agua" data-router="section" data-label="Agua Helada" ></a></strong>
+                        <small>Jeffer Ariza, estubo aqui</small>
+                    </li>
+                    <li class="thumb selectable" data-image="img/tru.png">
+                        <strong><a href="#Trucupey" data-router="section" data-label="Trucupey" ></a></strong>
+                        <small>Bryan Villafañe, estubo aqui</small>
+                    </li>                    
+                </ul>
+            </div>   
+        </article> 
+    </section>
+    <!--***************************Mapa-tru**********************************************-->
+    <section id="mapa" data-transition="slide">
+        <header data-back="left" data-title="Como llegar"></header>
+        <article class="list indented scroll">
+        	<iframe width="100%" height="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.es/maps/ms?msa=0&amp;msid=204518939830781667095.0004dac3430855265dbd1&amp;ie=UTF8&amp;t=m&amp;ll=10.990328,-74.788806&amp;spn=0.005266,0.003422&amp;z=17&amp;output=embed"></iframe><br />
+        </article>
+    </section>
+ <!--********************************recomendados*****************************************-->
+    <section id="recomendados" data-transition="slide">
+        <header data-back="left" data-title="Los mas sociales"></header>
+        <article style="padding:5px"  class="list indented scroll">
+            <div>
+                <ul>
+                	<li class="thumb selectable" data-icon="star-full" data-image="img/tru.png">
+                        <strong><a href="#Trucupey" data-router="section" data-label="Trucupey" ></a></strong>
+                        <small>617, Me gusta</small>
+                    </li>
+                    <li class="thumb selectable" data-icon="star" data-image="img/agua.png">
+                        <strong><a href="#agua" data-router="section" data-label="Agua Helada" ></a></strong>
+                        <small>256, Me gusta</small>
+                    </li>
+                    <li class="thumb selectable"data-icon="star" data-image="img/troja.png">
+                        <strong><a href="#agua" data-router="section" data-label="La troja" ></a></strong>
+                        <small>213, Me gusta</small>
+                    </li> 
+                </ul>
+            </div>
+        </article>
+    </section>
+    <!--**************************Precios***********************************************-->  
+    <section id="Precios" data-transition="slide">
+        <header data-back="left" data-title="Cuanto quieres gastar?"></header>
+        <article style="padding:5px"  class="list indented scroll">
+            <div>
+                <ul>
+                	<li class="thumb selectable" data-icon="heart" >
+                        <strong><a href="#Trucupey" data-router="section" data-label="Precios Fexibles" ></a></strong>
+                        <small>Lo mejor para tu bolsillo</small>
+                    </li>
+                    <li class="thumb selectable" data-icon="heart-full" >
+                        <strong><a href="#agua" data-router="section" data-label="Precios Comodos" ></a></strong>
+                        <small>Comodidad insuperable</small>
+                    </li>
+                    <li class="thumb selectable"data-icon="vcard" >
+                        <strong><a href="#agua" data-router="section" data-label="Precios Esclusivos"></a></strong>
+                        <small>Perfecto para ti</small>
+                    </li>
+                </ul>
+            </div>
+        </article>
+    </section>
+    <!--**************************Buscar Restaurantes***********************************************-->  
+    <section id="rest" data-transition="slide">
+        <header data-back="left" data-title="Restaurantes"></header>
+            <article id="listaRest" class="list indented scroll">
+            </article>       
+    </section>
+    <!--*************************reservar************************************************-->
+    <section id="reservar" data-transition="slide">
+        <header data-back="left" data-title="Reservar"></header>
+        <article style="padding:5px" id="res">
+            <div  class="list indented scroll">
+                <ul>
+                    <li class="thumb selectable" id="telefono">
+                        <strong><a href="#" data-router="section" data-label="Contactar" data-icon="phone"></a></strong>
+                        <small>Información</small>
+                    </li>
+                    <li class="thumb selectable">
+                        <strong><a href="#eventos" data-router="section" data-label="Eventos" data-icon="calendar"></a></strong>
+                        <small>Reserva tus eventos ya</small>
+                    </li>
+                    <li class="thumb selectable">
+                        <strong><a href="#" data-router="section" data-label="Forma de Pago" data-icon="vcard"></a></strong>
+                        <small>Configura tu pago</small>
+                    </li>
+                </ul>
+            </div>
+        </article>
+    </section> 
+    <!-- *************Eventos******************************* -->
+    <section id="eventos" data-transition="slide">
+        <header data-back="left" data-title="Proximos Eventos"></header>
+        <article style="padding:5px" id="res">
+            <div  class="list indented scroll">
+                <ul>
+                    <li class="thumb selectable" id="comprar">
+                        <strong><a href="#comprar"  data-label="28 Abr. Happy hours" data-icon="calendar"></a></strong>
+                        <small>Quiero Ir</small>
+                    </li>
+                    <li class="thumb selectable" id="comprar">
+                        <strong><a href="#comprar"  data-label="29 Abr. Cover 2X1" data-icon="calendar"></a></strong>
+                        <small>Quiero Ir</small>
+                    </li>
+                    <li class="thumb selectable" id="comprar">
+                        <strong><a href="#comprar"  data-label="4 May. Don Omar" data-icon="calendar"></a></strong>
+                        <small>Quiero Ir</small>
+                    </li>
+                    <li class="thumb selectable" id="comprar">
+                        <strong><a href="#comprar" data-label="5 May. Solos y Solas" data-icon="calendar"></a></strong>
+                        <small>Quiero Ir</small>
+                    </li>
+                    <li class="thumb selectable" id="comprar">
+                        <strong><a href="#comprar"  data-label="11 May. Piter Majares" data-icon="calendar"></a></strong>
+                        <small>Quiero Ir</small>
+                    </li>
+                </ul>
+            </div>
+        </article>
+    </section> 
+    <!--****************BRYAN************************************-->  
     <section id="second" data-transition="cover">
-        <header data-back="home" data-title="Chat"></header>
+        <header data-back="left" data-title="Chat"></header>
         <article id="chat" class="list indented scroll">
             <ul>
                 <li class="thumb selectable" data-image="https://si0.twimg.com/profile_images/3212320104/ca2f76de785fce7bace5805f6e6d4d1e.png">
@@ -180,12 +455,10 @@
                     <strong>Jeffer</strong>
                     <small>Aburrido nadie habla</small>
                 </li>
-                
                 <li class="thumb selectable" data-image="https://fbcdn-profile-a.akamaihd.net/hprofile-ak-snc7/c0.30.180.180/s160x160/427357_10200271382363122_730365576_a.jpg"><div class="right bubble orange">15 min</div>
                     <strong>Andres</strong>
                     <small>Empezando la rumba</small>
                 </li>
-
                 <li class="anchor"></li>
 
                 <li id="chatAdmin" class="thumb selectable" data-image="http://us.123rf.com/400wm/400/400/wavebreakmediamicro/wavebreakmediamicro1106/wavebreakmediamicro110604881/10093681-joven-administrador-de-una-presentacion.jpg">
@@ -198,7 +471,6 @@
 
     <section id="seVaSect" data-transition="slide">
         <header data-back="home" data-title="Opciones"></header>
-
         <article id="taxiArt" class="list indented scroll">
             <h1>Taxi de Confianza</h1>
             <ul>
@@ -223,26 +495,29 @@
                 </li>
             </ul>
         </article>
-
         <article id="soloArt" class="list indented scroll">
             <h1>Carro Propio</h1>
              <ul>
-                <li class="selectable" id="liAmigo">
+                <li class="selectable" id="liAmigo" data-icon="users">
                     <strong>Amigo o Familiar</strong>
                     <small>Puedes pedir que alguien de tu lista de confianza
                      para que venga por ti</small>
                 </li>
-                <li class="selectable" id="liDesignado">
-                    <strong>Conductor Desigando</strong>
+				<li class="selectable" id="liAmigo" data-icon="plus">
+                    <strong>Sura</strong>
+                    <small>Pide tu conductor en tu aseguradora</small>
+                </li>
+                <li class="selectable" id="liDesignado" data-image="img/escudo.png">
+                    <strong>Comisario Conductor</strong>
                     <small>Podemos elegir un conducto elegido para
                      que te lleve hasta tu hogar</small>
                 </li>
             </ul>
         </article>
-    </section>
-
+    </section>  
+    <!--***************************Bryan boton panico****************************************-->
     <section id="ConfigSect" data-transition="slide">
-        <header data-back="home" data-title="Configuracion Boton Panico"></header>
+        <header data-back="left" data-title="Configuracion Boton Panico"></header>
         <article id="FormConfigPanic">
             <form>
                 <br />
@@ -251,9 +526,9 @@
                 <a href="#main" data-router="section" class="button blue big" data-icon="check" data-label="Guardar"></a>
             </form>
        </article>
-
     </section>
-
+    
+    <!--***************************Bryan (Chat)**********************************************--> 
     <section id="ChatSect" data-transition="slide">
         <header data-back="home" data-title="Chat"></header>
         <article id="FormChatadmin">
@@ -265,16 +540,20 @@
             </form>
        </article>
     </section>
-
+    <!--***************************Bryan**********************************************-->      
     <!-- Lungo - Dependencies -->
     <script src="components/quojs/quo.js"></script>
     <script src="components/lungo/lungo.js"></script>
+    <script src="mustache.js"></script>
     <script src="events.js"></script>
+    <script src="service.js"></script>
+    <script src="view.js"></script>
+    <script src="data.js"></script>
     <!-- Lungo - Sandbox App -->
     <script>
         Lungo.init({
-            name: 'RumbON'
+            name: 'prueba'
         });
     </script>
 </body>
-</html>
+</html>		
