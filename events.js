@@ -17,6 +17,10 @@ $$('#bar').tap(function() {
 	    }
 	});
 });
+
+$$('#searchLi').tap(function() {
+	Lungo.Router.section('buscar');
+});
 $$('#taxi').tap(function() {
 	Lungo.Notification.confirm({
 	    icon: 'user',

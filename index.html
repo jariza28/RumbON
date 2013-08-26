@@ -55,7 +55,7 @@
     <!--*****************************Bienvenida********************************************-->
     <section id="first" data-transition="slide">
         <article class="indented splash">
-            <h1>RumbON</h1>
+            <!-- <img src="img/logo.png"> -->
             <form>
                 <input id="username" type="text" placeholder="Email" required />
                 <input id="password" type="password" placeholder="Contraseña" required />
@@ -87,29 +87,24 @@
     </section>
     <!--**********************************MENU***************************************-->    
     <section id="main" data-transition="slide" >
-        <header data-title="Home" class="extended"  >
+        <header data-title="Home" class="extended">
             <nav class="left box">
-                <a href="#back" data-router="section" data-label="Logout"></a>
+                <a href="#" id="aLogout" data-router="section" data-label="Logout"></a>
             </nav>
             <nav class="right">
                 <a href="#second" data-router="section" data-icon="chat"></a>
             </nav>
         </header>
         <article id="home" class="list indented scroll">
-            <fieldset data-icon="search">
-                <input type="search" placeholder="Search...">
-            </fieldset>
             <ul>
-                <li class="thumb selectable arrow" data-image="img/trago.png"  >
-                    <strong><a href="#buscar"  data-router="section" data-label="Rumba y Restaurantes" ></a></strong>
+                <li class="thumb selectable arrow" id="searchLi" data-image="img/trago.png"  >
+                    <strong>Rumba y Restaurantes</strong>
                     <small>Encuentra la fiesta y donde comer</small>
                 </li>
-                 <li id="taxi" class="thumb selectable arrow" data-image="img/mevoy.png">
+                <li id="taxi" class="thumb selectable arrow" data-image="img/mevoy.png">
                     <strong>Me voy</strong>
                     <small>En que te vas?</small>
                 </li>
-                
-                
                 <li class="thumb selectable arrow" id="panic" data-image="img/emergencia.png">
                     <strong>Boton de panico</strong>
                     <small>En caso de cualquier succeso</small>
@@ -126,12 +121,12 @@
             </nav>
         </footer>
         
-        <article id="art-2" style=" padding:10px;">
+        <article id="art-2">
             <center>
             	<form>
                     <input type="text" placeholder="Buscar" />
-                 </form>
-                 <a href="#resultados"  data-router="section" class="button blue big">Buscar</a>
+                </form>
+                <a href="#resultados"  data-router="section" class="button blue big">Buscar</a>
             </center>       
         </article>
 
@@ -165,55 +160,32 @@
     <section id="buscar" data-transition="slide" class="extended">
         <header data-back="home" data-title="Buscar"></header>
         <article class="list indented scroll">
-            <center>
-                <fieldset data-icon="search">
-                    <input type="search" placeholder="Search...">
-                     &nbsp;<a href="#resultados"  data-router="section" class="button small">Buscar</a>
-                </fieldset>     
-            </center>
             <div>
                 <ul>
                     <li class="thumb selectable">
-                        <strong><a id="aRest" href="#rest" data-router="section" data-label="Restaurantes" data-icon="pushpin"></a></strong>
+                        <a id="aRest" href="#rest" data-router="section" data-icon="pushpin"></a>
+                        <strong>Restaurantes</strong>
                         <small>Buscar Restaurante</small>
                     </li>
                     <li class="thumb selectable">
-                        <strong><a href="#generos" data-router="section" data-label="Generos" data-icon="music"></a></strong>
+                        <a href="#generos" data-router="section" data-icon="music"></a>
+                        <strong>Generos</strong>
                         <small>Busca por generos musicales</small>
                     </li>
                     <li class="thumb selectable">
-                        <strong><a href="#amigos" data-router="section" data-label="Amigos" data-icon="users"></a></strong>
+                        <a href="#amigos" data-router="section" data-icon="users"></a>
+                        <strong>Amigos</strong>
                         <small>Visita los lugares de amigos</small>
                     </li>
                     <li class="thumb selectable">
-                        <strong><a href="#recomendados" data-router="section" data-label="Recomendados" data-icon="thumbs-up"></a></strong>
+                        <a href="#recomendados" data-router="section" data-icon="thumbs-up"></a>
+                        <strong>Recomendados</strong>
                         <small>Por las redes sociales</small>
                     </li>
                     <li class="thumb selectable">
-                        <strong><a href="#Precios" data-router="section" data-label="Precios" data-icon="bars"></a></strong>
+                        <a href="#Precios" data-router="section" data-icon="bars"></a>
+                        <strong>Precios</strong>
                         <small>Buscar por precios</small>
-                    </li>
-                </ul>
-            </div>
-        </article>
-    </section>
-    <!--*************************************************************************-->
-    <section id="resultados" data-transition="cover">
-        <header data-back="home" data-title="Buscar Rumba"></header>
-        <article style="padding:5px">
-            <div  class="list indented scroll">
-                <ul>
-                    <li class="thumb selectable" data-image="img/agua.png">
-                        <strong><a href="#agua" data-router="section" data-label="Agua Helada" ></a></strong>
-                        <small>Agua Helada</small>
-                    </li>
-                    <li class="thumb selectable" data-image="img/tru.png">
-                        <strong><a href="#Trucupey" data-router="section" data-label="Trucupey" ></a></strong>
-                        <small>Trucupey</small>
-                    </li>
-                    <li class="thumb selectable" data-image="img/troja.png">
-                        <strong><a href="#troja" data-router="section" data-label="La troja" ></a></strong>
-                        <small>La troja</small>
                     </li>
                 </ul>
             </div>
@@ -222,7 +194,7 @@
     <!--**********************Resultados_Discostecas TRucupey**********************************************-->
     <section id="Trucupey" data-transition="slide" class="extended">
         <header data-back="left" data-title="Trucupey"></header>
-        <article style="padding:5px" class="list indented scroll">
+        <article class="list indented scroll">
             <div>
                 <ul>
                     <li class="thumb selectable" >
@@ -244,7 +216,7 @@
                 </ul>
             </div>
             <fieldset>
-                <label style="font-size:16px">Fotos</label>
+                <label>Fotos</label>
             </fieldset>
             <ul class=" four row scroll anchor">
                 <img src="http://lorempixel.com/256/128/food/">
@@ -311,7 +283,7 @@
     <!--***********************Recomendacion por Amigos**************************************************-->
     <section id="amigos" data-transition="slide">
         <header data-back="left" data-title="Tus Amigos Fueron a:"></header>
-        <article style="padding:5px"  class="list indented scroll">
+        <article class="list indented scroll">
             <div>
                 <ul>
                     <li class="thumb selectable" data-image="img/agua.png">
@@ -336,7 +308,7 @@
  <!--********************************recomendados*****************************************-->
     <section id="recomendados" data-transition="slide">
         <header data-back="left" data-title="Los mas sociales"></header>
-        <article style="padding:5px"  class="list indented scroll">
+        <article class="list indented scroll">
             <div>
                 <ul>
                 	<li class="thumb selectable" data-icon="star-full" data-image="img/tru.png">
@@ -358,7 +330,7 @@
     <!--**************************Precios***********************************************-->  
     <section id="Precios" data-transition="slide">
         <header data-back="left" data-title="Cuanto quieres gastar?"></header>
-        <article style="padding:5px"  class="list indented scroll">
+        <article class="list indented scroll">
             <div>
                 <ul>
                 	<li class="thumb selectable" data-icon="heart" >
@@ -386,7 +358,7 @@
     <!--*************************reservar************************************************-->
     <section id="reservar" data-transition="slide">
         <header data-back="left" data-title="Reservar"></header>
-        <article style="padding:5px" id="res">
+        <article id="res">
             <div  class="list indented scroll">
                 <ul>
                     <li class="thumb selectable" id="telefono">
@@ -408,7 +380,7 @@
     <!-- *************Eventos******************************* -->
     <section id="eventos" data-transition="slide">
         <header data-back="left" data-title="Proximos Eventos"></header>
-        <article style="padding:5px" id="res">
+        <article id="res">
             <div  class="list indented scroll">
                 <ul>
                     <li class="thumb selectable" id="comprar">
@@ -542,17 +514,17 @@
     </section>
     <!--***************************Bryan**********************************************-->      
     <!-- Lungo - Dependencies -->
+    <script src="cordova.js"></script>    
     <script src="components/quojs/quo.js"></script>
     <script src="components/lungo/lungo.js"></script>
     <script src="mustache.js"></script>
     <script src="events.js"></script>
     <script src="service.js"></script>
-    <script src="view.js"></script>
     <script src="data.js"></script>
     <!-- Lungo - Sandbox App -->
     <script>
         Lungo.init({
-            name: 'prueba'
+            name: 'RumbON'
         });
     </script>
 </body>
